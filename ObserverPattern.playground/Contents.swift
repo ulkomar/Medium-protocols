@@ -54,7 +54,7 @@ class Observer: ObserverProtocol {
         self.memberId = Observer.id
     }
     
-    // this is the function that calls from the Subject
+    // this is the function that is called from the Subject
     func sayOk() {
         print("\(self.name), \(self.position) начал работать!")
     }
