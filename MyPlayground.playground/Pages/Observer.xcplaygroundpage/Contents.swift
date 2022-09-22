@@ -71,8 +71,6 @@ mark.addMember(member: firstManager)
 mark.addMember(member: secondManager)
 mark.addMember(member: thirdManager)
 
-mark.notifyAll()
-print("--------")
-mark.removeMember(member: thirdManager)
 mark.notifyAll() 
+
 
