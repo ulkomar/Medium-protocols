@@ -53,5 +53,9 @@ func mainFunction(closure: @autoclosure () -> Int) {
 
 mainFunction(closure: nums.remove(at: 0) )
 
+enum ContactKey: String {
+    case title
+    case phone
+}
 
 
