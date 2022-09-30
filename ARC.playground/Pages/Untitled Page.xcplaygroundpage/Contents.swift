@@ -1,6 +1,6 @@
 class House {
     var title: String
-    var owner: Human?
+    weak var owner: Human?
     
     init(title: String, owner: Human? = nil) {
         print("House was created \(title)")
@@ -44,7 +44,15 @@ if true {
 }
 
 
+var a = 5
 
+let b = { print(a) }
+
+b()
+
+a = 7
+
+b()
 
 
 
