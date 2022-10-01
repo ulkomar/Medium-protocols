@@ -22,6 +22,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y8E-LZ-78V">
+                                <rect key="frame" x="95" y="361" width="202" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Change with properties"/>
+                                <connections>
+                                    <action selector="editDataWithProperties:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1UC-Ld-Dny"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
@@ -47,18 +56,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vu2-eN-VL1">
-                                <rect key="frame" x="30" y="181" width="330" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vu2-eN-VL1">
+                                <rect key="frame" x="30" y="194" width="330" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t9M-Q9-g4E">
+                                <rect key="frame" x="60" y="328" width="270" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Save with properties"/>
+                                <connections>
+                                    <action selector="saveWithProperties:" destination="Av5-YT-qUy" eventType="touchUpInside" id="C2Y-3M-ln2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5d2-Qj-u2D"/>
                         <color key="backgroundColor" red="0.96611279249191284" green="0.95844795534513771" blue="0.57032200723020843" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="5d2-Qj-u2D" firstAttribute="trailing" secondItem="Vu2-eN-VL1" secondAttribute="trailing" constant="30" id="54u-BA-Y3n"/>
+                            <constraint firstItem="5d2-Qj-u2D" firstAttribute="trailing" secondItem="t9M-Q9-g4E" secondAttribute="trailing" constant="60" id="QJ8-np-kfK"/>
+                            <constraint firstItem="t9M-Q9-g4E" firstAttribute="top" secondItem="Vu2-eN-VL1" secondAttribute="bottom" constant="100" id="Tln-hb-g1b"/>
+                            <constraint firstItem="t9M-Q9-g4E" firstAttribute="centerX" secondItem="aBS-2z-Hqo" secondAttribute="centerX" id="Zhe-K2-S0a"/>
+                            <constraint firstItem="t9M-Q9-g4E" firstAttribute="leading" secondItem="5d2-Qj-u2D" secondAttribute="leading" constant="60" id="pMB-ON-14a"/>
                             <constraint firstItem="Vu2-eN-VL1" firstAttribute="centerX" secondItem="aBS-2z-Hqo" secondAttribute="centerX" id="vkY-NP-48D"/>
                             <constraint firstItem="Vu2-eN-VL1" firstAttribute="leading" secondItem="5d2-Qj-u2D" secondAttribute="leading" constant="30" id="vpd-WK-Pjg"/>
+                            <constraint firstItem="Vu2-eN-VL1" firstAttribute="top" secondItem="5d2-Qj-u2D" secondAttribute="top" constant="150" id="ydd-ZH-CZg"/>
                         </constraints>
                     </view>
                     <connections>
