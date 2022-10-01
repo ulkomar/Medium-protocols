@@ -11,7 +11,7 @@
         <!--View Controller-->
         <scene sceneID="MeF-Ey-lYd">
             <objects>
-                <viewController id="st1-Qf-ET7" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="redViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="st1-Qf-ET7" customClass="ViewController" customModule="NavigationApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2uG-x4-vSp">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -22,7 +22,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="To green"/>
                                 <connections>
-                                    <segue destination="aAR-Ek-ukg" kind="show" id="03E-hf-3Jx"/>
+                                    <action selector="toGreenScene:" destination="st1-Qf-ET7" eventType="touchUpInside" id="Jzq-xr-0ya"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -38,7 +38,7 @@
         <!--View Controller-->
         <scene sceneID="GrE-8a-so3">
             <objects>
-                <viewController id="aAR-Ek-ukg" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="greenViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="aAR-Ek-ukg" customClass="ViewController" customModule="NavigationApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8zK-Ga-Qhx">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -49,7 +49,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="To yellow"/>
                                 <connections>
-                                    <segue destination="zvg-dy-jfS" kind="show" id="Z8b-sM-mIs"/>
+                                    <action selector="toYellowScene:" destination="aAR-Ek-ukg" eventType="touchUpInside" id="ETm-rM-Jjn"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -65,10 +65,21 @@
         <!--View Controller-->
         <scene sceneID="IcR-6y-XZq">
             <objects>
-                <viewController id="zvg-dy-jfS" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="yellowViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zvg-dy-jfS" customClass="ViewController" customModule="NavigationApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vSL-wf-S2D">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6qh-WC-Osa">
+                                <rect key="frame" x="99" y="405" width="194" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="To root view controller"/>
+                                <connections>
+                                    <action selector="toRootScene:" destination="zvg-dy-jfS" eventType="touchUpInside" id="cyf-7d-zI5"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="LNV-io-UQ3"/>
                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                     </view>
