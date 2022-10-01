@@ -22,12 +22,24 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Am0-al-vA4">
+                                <rect key="frame" x="30" y="324" width="330" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Change with delegate"/>
+                                <connections>
+                                    <action selector="editDataWithDelegate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VRa-sy-Y8h"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
                         <constraints>
                             <constraint firstItem="dYz-ru-COg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BQo-Ta-cnY"/>
+                            <constraint firstItem="Am0-al-vA4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="E9a-KD-kzs"/>
+                            <constraint firstItem="Am0-al-vA4" firstAttribute="top" secondItem="dYz-ru-COg" secondAttribute="bottom" constant="150" id="Ejx-UK-xgy"/>
                             <constraint firstItem="dYz-ru-COg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="Zpd-M5-W6W"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Am0-al-vA4" secondAttribute="trailing" constant="30" id="aBB-af-hIJ"/>
+                            <constraint firstItem="Am0-al-vA4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="wUI-wZ-WrE"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="tdE-qh-Hh5"/>
@@ -52,13 +64,25 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bSN-7B-b1G">
+                                <rect key="frame" x="30" y="278" width="330" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Save data with delegate"/>
+                                <connections>
+                                    <action selector="saveWithDelegatation:" destination="phn-kG-DKN" eventType="touchUpInside" id="r5F-lm-07D"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="67P-aS-S38"/>
                         <color key="backgroundColor" systemColor="systemTealColor"/>
                         <constraints>
                             <constraint firstItem="yCy-HE-YGV" firstAttribute="top" secondItem="67P-aS-S38" secondAttribute="top" constant="50" id="33g-sa-30F"/>
                             <constraint firstItem="yCy-HE-YGV" firstAttribute="leading" secondItem="67P-aS-S38" secondAttribute="leading" constant="30" id="7fW-NO-pCK"/>
+                            <constraint firstItem="bSN-7B-b1G" firstAttribute="leading" secondItem="67P-aS-S38" secondAttribute="leading" constant="30" id="Dhz-Tx-Blg"/>
                             <constraint firstItem="67P-aS-S38" firstAttribute="trailing" secondItem="yCy-HE-YGV" secondAttribute="trailing" constant="30" id="GuC-FY-tjF"/>
+                            <constraint firstItem="bSN-7B-b1G" firstAttribute="centerX" secondItem="Xgf-vK-fh0" secondAttribute="centerX" id="LO3-a7-TmO"/>
+                            <constraint firstItem="bSN-7B-b1G" firstAttribute="top" secondItem="yCy-HE-YGV" secondAttribute="bottom" constant="150" id="gED-gA-bqa"/>
+                            <constraint firstItem="67P-aS-S38" firstAttribute="trailing" secondItem="bSN-7B-b1G" secondAttribute="trailing" constant="30" id="lPX-SJ-x9c"/>
                             <constraint firstItem="yCy-HE-YGV" firstAttribute="centerX" secondItem="Xgf-vK-fh0" secondAttribute="centerX" id="mGL-aK-gt7"/>
                         </constraints>
                     </view>

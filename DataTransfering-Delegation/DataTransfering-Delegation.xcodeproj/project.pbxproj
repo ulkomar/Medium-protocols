@@ -14,6 +14,7 @@
 		8062EC5628E8B1A300388D1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8062EC5528E8B1A300388D1C /* Assets.xcassets */; };
 		8062EC5928E8B1A300388D1C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8062EC5728E8B1A300388D1C /* LaunchScreen.storyboard */; };
 		8062EC6128E8B1C900388D1C /* ManageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8062EC6028E8B1C900388D1C /* ManageViewController.swift */; };
+		8062EC6328E8B37400388D1C /* Update.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8062EC6228E8B37400388D1C /* Update.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		8062EC5828E8B1A300388D1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8062EC5A28E8B1A300388D1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8062EC6028E8B1C900388D1C /* ManageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageViewController.swift; sourceTree = "<group>"; };
+		8062EC6228E8B37400388D1C /* Update.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Update.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				8062EC5028E8B1A100388D1C /* ViewController.swift */,
 				8062EC6028E8B1C900388D1C /* ManageViewController.swift */,
 				8062EC5228E8B1A100388D1C /* Main.storyboard */,
+				8062EC6228E8B37400388D1C /* Update.swift */,
 				8062EC5528E8B1A300388D1C /* Assets.xcassets */,
 				8062EC5728E8B1A300388D1C /* LaunchScreen.storyboard */,
 				8062EC5A28E8B1A300388D1C /* Info.plist */,
@@ -143,6 +146,7 @@
 			files = (
 				8062EC5128E8B1A100388D1C /* ViewController.swift in Sources */,
 				8062EC6128E8B1C900388D1C /* ManageViewController.swift in Sources */,
+				8062EC6328E8B37400388D1C /* Update.swift in Sources */,
 				8062EC4D28E8B1A100388D1C /* AppDelegate.swift in Sources */,
 				8062EC4F28E8B1A100388D1C /* SceneDelegate.swift in Sources */,
 			);
