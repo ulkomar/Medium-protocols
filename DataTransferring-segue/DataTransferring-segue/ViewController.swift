@@ -40,5 +40,9 @@ class ViewController: UIViewController {
     private func changeTextLabel(text: String) {
         self.textLabel.text = text
     }
+    
+    @IBAction func unwindSegueChangeData(_ segue: UIStoryboardSegue) {
+        
+    }
 }
 
