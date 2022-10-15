@@ -13,6 +13,8 @@
 		8008B88C28FAE1DE0070FE34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8008B88A28FAE1DE0070FE34 /* Main.storyboard */; };
 		8008B88E28FAE1DF0070FE34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8008B88D28FAE1DF0070FE34 /* Assets.xcassets */; };
 		8008B89128FAE1DF0070FE34 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8008B88F28FAE1DF0070FE34 /* LaunchScreen.storyboard */; };
+		8008B89A28FAEB120070FE34 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8008B89828FAEB120070FE34 /* PhotoCollectionViewCell.swift */; };
+		8008B89B28FAEB120070FE34 /* PhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8008B89928FAEB120070FE34 /* PhotoCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		8008B88D28FAE1DF0070FE34 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8008B89028FAE1DF0070FE34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8008B89228FAE1DF0070FE34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8008B89828FAEB120070FE34 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		8008B89928FAEB120070FE34 /* PhotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				8008B88D28FAE1DF0070FE34 /* Assets.xcassets */,
 				8008B88F28FAE1DF0070FE34 /* LaunchScreen.storyboard */,
 				8008B89228FAE1DF0070FE34 /* Info.plist */,
+				8008B89828FAEB120070FE34 /* PhotoCollectionViewCell.swift */,
+				8008B89928FAEB120070FE34 /* PhotoCollectionViewCell.xib */,
 			);
 			path = "UICollectionView - theory";
 			sourceTree = "<group>";
@@ -126,6 +132,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8008B89128FAE1DF0070FE34 /* LaunchScreen.storyboard in Resources */,
+				8008B89B28FAEB120070FE34 /* PhotoCollectionViewCell.xib in Resources */,
 				8008B88E28FAE1DF0070FE34 /* Assets.xcassets in Resources */,
 				8008B88C28FAE1DE0070FE34 /* Main.storyboard in Resources */,
 			);
@@ -139,6 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8008B88928FAE1DD0070FE34 /* ViewController.swift in Sources */,
+				8008B89A28FAEB120070FE34 /* PhotoCollectionViewCell.swift in Sources */,
 				8008B88528FAE1DD0070FE34 /* AppDelegate.swift in Sources */,
 				8008B88728FAE1DD0070FE34 /* SceneDelegate.swift in Sources */,
 			);
