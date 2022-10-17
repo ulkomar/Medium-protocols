@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  Compositional layout
+//  UIApplication
 //
-//  Created by Uladzislau Komar on 15.10.22.
+//  Created by Uladzislau Komar on 17.10.22.
 //
 
 import UIKit

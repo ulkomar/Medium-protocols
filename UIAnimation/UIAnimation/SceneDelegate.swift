@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  Compositional layout
+//  UIAnimation
 //
-//  Created by Uladzislau Komar on 15.10.22.
+//  Created by Uladzislau Komar on 16.10.22.
 //
 
 import UIKit
