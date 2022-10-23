@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		80C8792329056810004287E4 /* MyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C8792229056810004287E4 /* MyService.swift */; };
+		80C879252905686F004287E4 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C879242905686F004287E4 /* NetworkService.swift */; };
 		80F34D3B29054F83005A2530 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F34D3A29054F83005A2530 /* AppDelegate.swift */; };
 		80F34D3D29054F83005A2530 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F34D3C29054F83005A2530 /* SceneDelegate.swift */; };
 		80F34D3F29054F83005A2530 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F34D3E29054F83005A2530 /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		80C8792229056810004287E4 /* MyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyService.swift; sourceTree = "<group>"; };
+		80C879242905686F004287E4 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		80F34D3729054F83005A2530 /* Codable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Codable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80F34D3A29054F83005A2530 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80F34D3C29054F83005A2530 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +67,8 @@
 				80F34D4329054F85005A2530 /* Assets.xcassets */,
 				80F34D4529054F85005A2530 /* LaunchScreen.storyboard */,
 				80F34D4829054F85005A2530 /* Info.plist */,
+				80C8792229056810004287E4 /* MyService.swift */,
+				80C879242905686F004287E4 /* NetworkService.swift */,
 			);
 			path = Codable;
 			sourceTree = "<group>";
@@ -138,7 +144,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80C879252905686F004287E4 /* NetworkService.swift in Sources */,
 				80F34D3F29054F83005A2530 /* ViewController.swift in Sources */,
+				80C8792329056810004287E4 /* MyService.swift in Sources */,
 				80F34D3B29054F83005A2530 /* AppDelegate.swift in Sources */,
 				80F34D3D29054F83005A2530 /* SceneDelegate.swift in Sources */,
 			);
