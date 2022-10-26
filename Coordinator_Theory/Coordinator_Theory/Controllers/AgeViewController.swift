@@ -7,8 +7,10 @@
 
 import UIKit
 
-class AgeViewController: UIViewController {
+class AgeViewController: UIViewController, FlowControllerProtocol {
 
+    var completionHandler: ((Int?) -> ())?
+    
     //MARK: UIViews
     private var textField = UITextField()
     private var button = UIButton()
@@ -23,6 +25,7 @@ class AgeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        navigationController?.title = "Age Controller"
         view.addSubview(textField)
         view.addSubview(button)
     }
@@ -48,7 +51,6 @@ class AgeViewController: UIViewController {
     
     //MARK: Action functions
     @objc func buttonAction(_ sender: UIButton) {
-        // do something
-        print("hello")
+        completionHandler?( Int(textField.text ?? "0") )
     }
 }

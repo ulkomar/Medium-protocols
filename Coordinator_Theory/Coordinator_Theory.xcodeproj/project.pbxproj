@@ -21,6 +21,8 @@
 		80D37B452909B24300F2C62F /* RegistrationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D37B442909B24300F2C62F /* RegistrationCoordinator.swift */; };
 		80D37B482909B3C100F2C62F /* ModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D37B472909B3C100F2C62F /* ModuleFactory.swift */; };
 		80D37B4A2909B8FC00F2C62F /* FlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D37B492909B8FC00F2C62F /* FlowController.swift */; };
+		80D37B4D2909C52A00F2C62F /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D37B4C2909C52A00F2C62F /* UserData.swift */; };
+		80D37B4F2909CED800F2C62F /* CoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D37B4E2909CED800F2C62F /* CoordinatorFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		80D37B442909B24300F2C62F /* RegistrationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationCoordinator.swift; sourceTree = "<group>"; };
 		80D37B472909B3C100F2C62F /* ModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleFactory.swift; sourceTree = "<group>"; };
 		80D37B492909B8FC00F2C62F /* FlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowController.swift; sourceTree = "<group>"; };
+		80D37B4C2909C52A00F2C62F /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		80D37B4E2909CED800F2C62F /* CoordinatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,7 @@
 		80CE5144290841CF0009AD65 /* Coordinator_Theory */ = {
 			isa = PBXGroup;
 			children = (
+				80D37B4B2909C51A00F2C62F /* Model */,
 				80D37B462909B38C00F2C62F /* Factories */,
 				80D37B432909B22C00F2C62F /* Coordinators */,
 				80D37B402909B05400F2C62F /* Base */,
@@ -127,8 +132,17 @@
 			isa = PBXGroup;
 			children = (
 				80D37B472909B3C100F2C62F /* ModuleFactory.swift */,
+				80D37B4E2909CED800F2C62F /* CoordinatorFactory.swift */,
 			);
 			path = Factories;
+			sourceTree = "<group>";
+		};
+		80D37B4B2909C51A00F2C62F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				80D37B4C2909C52A00F2C62F /* UserData.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,6 +218,7 @@
 			files = (
 				80D37B422909B06000F2C62F /* Coordinator.swift in Sources */,
 				80CE514A290841CF0009AD65 /* ViewController.swift in Sources */,
+				80D37B4D2909C52A00F2C62F /* UserData.swift in Sources */,
 				80CE5146290841CF0009AD65 /* AppDelegate.swift in Sources */,
 				80D37B4A2909B8FC00F2C62F /* FlowController.swift in Sources */,
 				80D37B482909B3C100F2C62F /* ModuleFactory.swift in Sources */,
@@ -213,6 +228,7 @@
 				80D37B3B2909A4DE00F2C62F /* PassViewController.swift in Sources */,
 				80D37B392909A4D100F2C62F /* LoginViewController.swift in Sources */,
 				80D37B372909A4C400F2C62F /* NameViewController.swift in Sources */,
+				80D37B4F2909CED800F2C62F /* CoordinatorFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,8 +7,10 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
-
+class LoginViewController: UIViewController, FlowControllerProtocol {
+    
+    var completionHandler: ((String?) -> ())?
+    
     //MARK: UIViews
     private var textField = UITextField()
     private var button = UIButton()
@@ -23,6 +25,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        navigationController?.title = "Login Controller"
         view.addSubview(textField)
         view.addSubview(button)
     }
@@ -48,7 +51,6 @@ class LoginViewController: UIViewController {
     
     //MARK: Action functions
     @objc func buttonAction(_ sender: UIButton) {
-        // do something
-        print("hello")
+        completionHandler?(textField.text)
     }
 }

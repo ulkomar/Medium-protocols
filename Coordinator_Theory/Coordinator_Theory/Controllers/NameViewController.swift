@@ -7,8 +7,10 @@
 
 import UIKit
 
-class NameViewController: UIViewController {
-
+class NameViewController: UIViewController, FlowControllerProtocol {
+    
+    var completionHandler: ((String?) -> ())?
+    
     //MARK: UIViews
     private var textField = UITextField()
     private var button = UIButton()
@@ -16,6 +18,7 @@ class NameViewController: UIViewController {
     //MARK: Override functions
     override func loadView() {
         super.loadView()
+        navigationController?.title = "Name Controller"
         self.textFieldSetup(view: &self.textField)
         self.buttonSetup(view: &self.button)
     }
@@ -48,8 +51,7 @@ class NameViewController: UIViewController {
     
     //MARK: Action functions
     @objc func buttonAction(_ sender: UIButton) {
-        // do something
-        print("hello")
+        completionHandler?(textField.text)
     }
 
 }

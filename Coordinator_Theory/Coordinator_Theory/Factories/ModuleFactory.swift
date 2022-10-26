@@ -9,19 +9,19 @@ import Foundation
 import UIKit
 
 class ModuleFactory {
-    func createNameViewController() -> UIViewController {
+    func createNameViewController() -> NameViewController {
         return NameViewController()
     }
     
-    func createLoginViewController() -> UIViewController {
+    func createLoginViewController() -> LoginViewController {
         return LoginViewController()
     }
     
-    func createPassViewController() -> UIViewController {
+    func createPassViewController() -> PassViewController {
         return PassViewController()
     }
     
-    func createAgeViewController() -> UIViewController {
+    func createAgeViewController() -> AgeViewController {
         return AgeViewController()
     }
 }

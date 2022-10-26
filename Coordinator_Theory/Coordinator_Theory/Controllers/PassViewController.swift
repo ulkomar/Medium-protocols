@@ -7,8 +7,10 @@
 
 import UIKit
 
-class PassViewController: UIViewController {
+class PassViewController: UIViewController, FlowControllerProtocol {
 
+    var completionHandler: ((String?) -> ())?
+    
     //MARK: UIViews
     private var textField = UITextField()
     private var button = UIButton()
@@ -23,6 +25,7 @@ class PassViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        navigationController?.title = "Password Controller"
         view.addSubview(textField)
         view.addSubview(button)
     }
@@ -48,7 +51,6 @@ class PassViewController: UIViewController {
     
     //MARK: Action functions
     @objc func buttonAction(_ sender: UIButton) {
-        // do something
-        print("hello")
+        completionHandler?(textField.text)
     }
 }
