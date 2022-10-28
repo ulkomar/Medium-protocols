@@ -23,6 +23,7 @@
 		80D37B4A2909B8FC00F2C62F /* FlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D37B492909B8FC00F2C62F /* FlowController.swift */; };
 		80D37B4D2909C52A00F2C62F /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D37B4C2909C52A00F2C62F /* UserData.swift */; };
 		80D37B4F2909CED800F2C62F /* CoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D37B4E2909CED800F2C62F /* CoordinatorFactory.swift */; };
+		80D37B51290C264900F2C62F /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D37B50290C264900F2C62F /* AppCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		80D37B492909B8FC00F2C62F /* FlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowController.swift; sourceTree = "<group>"; };
 		80D37B4C2909C52A00F2C62F /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		80D37B4E2909CED800F2C62F /* CoordinatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorFactory.swift; sourceTree = "<group>"; };
+		80D37B50290C264900F2C62F /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 			children = (
 				80D37B412909B06000F2C62F /* Coordinator.swift */,
 				80D37B492909B8FC00F2C62F /* FlowController.swift */,
+				80D37B50290C264900F2C62F /* AppCoordinator.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -222,6 +225,7 @@
 				80CE5146290841CF0009AD65 /* AppDelegate.swift in Sources */,
 				80D37B4A2909B8FC00F2C62F /* FlowController.swift in Sources */,
 				80D37B482909B3C100F2C62F /* ModuleFactory.swift in Sources */,
+				80D37B51290C264900F2C62F /* AppCoordinator.swift in Sources */,
 				80D37B452909B24300F2C62F /* RegistrationCoordinator.swift in Sources */,
 				80D37B3D2909A4E900F2C62F /* AgeViewController.swift in Sources */,
 				80CE5148290841CF0009AD65 /* SceneDelegate.swift in Sources */,

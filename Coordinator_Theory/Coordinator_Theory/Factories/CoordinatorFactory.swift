@@ -12,4 +12,8 @@ class CoordinatorFactory {
     func createRegistrationCoordinator(navigationController: UINavigationController) -> RegistrationCoordinator {
         return RegistrationCoordinator(navigationController: navigationController)
     }
+    
+    func createAppCoordinator(navigationController: UINavigationController) -> AppCoordinator {
+        return AppCoordinator(navigationController: navigationController)
+    }
 }
