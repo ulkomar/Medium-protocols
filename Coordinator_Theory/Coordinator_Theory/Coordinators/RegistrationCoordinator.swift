@@ -61,8 +61,9 @@ class RegistrationCoordinator: CoordinatorProtocol {
         
         controller.completionHandler = { [weak self] value in
             self?.userData.age = value
+            self?.flowCompletionHandler?()
         }
-        navigationController.pushViewController(controller, animated: true)
         
+        navigationController.pushViewController(controller, animated: true)
     }
 }

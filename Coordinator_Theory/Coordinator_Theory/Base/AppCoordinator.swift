@@ -25,10 +25,15 @@ class AppCoordinator: CoordinatorProtocol {
     private func showRegistrationFlow() {
         let registrationCoordinator = CoordinatorFactory().createRegistrationCoordinator(navigationController: navigationController)
         childCoordinators.append(registrationCoordinator)
+        
+        registrationCoordinator.flowCompletionHandler = { [weak self] in
+            self?.showMainFlow()
+        }
+        
         registrationCoordinator.start()
     }
     
     private func showMainFlow() {
-        
+        navigationController.setViewControllers([EndViewController()], animated: true)
     }
 }
