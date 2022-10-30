@@ -6,16 +6,19 @@ import PlaygroundSupport
 class MyViewController : UIViewController {
     override func loadView() {
         super.loadView()
-        let view = UIView()
         view.backgroundColor = .white
 
-        let label = UILabel()
-        label.frame = CGRect(x: 150, y: 200, width: 200, height: 20)
-        label.text = "Hello World!"
-        label.textColor = .black
+        let redView = UIView()
+        redView.backgroundColor = .systemYellow
         
-        view.addSubview(label)
-        self.view = view
+        NSLayoutConstraint.activate([
+            redView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            redView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            redView.widthAnchor.constraint(equalToConstant: 100)
+        ])
+        
+        view.addSubview(redView)
+
     }
 }
 // Present the view controller in the Live View window
