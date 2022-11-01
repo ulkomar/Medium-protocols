@@ -58,7 +58,7 @@ class ViewController: UIViewController {
 //        nameTextField.backgroundColor = .systemBlue
 //        nameTextField.placeholder = "Enter name"
 //
-//        view.addSubview(nameLabel)
+//        view.addSubview(nameLabel) 
 //        view.addSubview(nameTextField)
 //
 //        NSLayoutConstraint.activate([
