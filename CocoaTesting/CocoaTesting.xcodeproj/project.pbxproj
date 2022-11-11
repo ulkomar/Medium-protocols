@@ -13,6 +13,8 @@
 		80E2EE6B291D5DFC00D78B2C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80E2EE69291D5DFC00D78B2C /* Main.storyboard */; };
 		80E2EE6D291D5DFD00D78B2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80E2EE6C291D5DFD00D78B2C /* Assets.xcassets */; };
 		80E2EE70291D5DFD00D78B2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80E2EE6E291D5DFD00D78B2C /* LaunchScreen.storyboard */; };
+		80E2EE78291D5E3900D78B2C /* MyHorizonLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E2EE77291D5E3900D78B2C /* MyHorizonLine.swift */; };
+		80E2EE7B291D5F5900D78B2C /* MyBoundedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E2EE7A291D5F5900D78B2C /* MyBoundedLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,9 @@
 		80E2EE6C291D5DFD00D78B2C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		80E2EE6F291D5DFD00D78B2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		80E2EE71291D5DFD00D78B2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		80E2EE77291D5E3900D78B2C /* MyHorizonLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHorizonLine.swift; sourceTree = "<group>"; };
+		80E2EE7A291D5F5900D78B2C /* MyBoundedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBoundedLabel.swift; sourceTree = "<group>"; };
+		80E2EE7C291D744000D78B2C /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,12 +64,23 @@
 				80E2EE63291D5DFC00D78B2C /* AppDelegate.swift */,
 				80E2EE65291D5DFC00D78B2C /* SceneDelegate.swift */,
 				80E2EE67291D5DFC00D78B2C /* ViewController.swift */,
+				80E2EE7C291D744000D78B2C /* MyPlayground.playground */,
+				80E2EE79291D5E3F00D78B2C /* Chapters */,
 				80E2EE69291D5DFC00D78B2C /* Main.storyboard */,
 				80E2EE6C291D5DFD00D78B2C /* Assets.xcassets */,
 				80E2EE6E291D5DFD00D78B2C /* LaunchScreen.storyboard */,
 				80E2EE71291D5DFD00D78B2C /* Info.plist */,
 			);
 			path = CocoaTesting;
+			sourceTree = "<group>";
+		};
+		80E2EE79291D5E3F00D78B2C /* Chapters */ = {
+			isa = PBXGroup;
+			children = (
+				80E2EE77291D5E3900D78B2C /* MyHorizonLine.swift */,
+				80E2EE7A291D5F5900D78B2C /* MyBoundedLabel.swift */,
+			);
+			path = Chapters;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +154,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80E2EE7B291D5F5900D78B2C /* MyBoundedLabel.swift in Sources */,
 				80E2EE68291D5DFC00D78B2C /* ViewController.swift in Sources */,
+				80E2EE78291D5E3900D78B2C /* MyHorizonLine.swift in Sources */,
 				80E2EE64291D5DFC00D78B2C /* AppDelegate.swift in Sources */,
 				80E2EE66291D5DFC00D78B2C /* SceneDelegate.swift in Sources */,
 			);
