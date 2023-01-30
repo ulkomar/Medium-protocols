@@ -15,12 +15,14 @@ import UIKit
 enum Main {
     // MARK: Use cases
     
-    enum Something {
+    enum desplayCartoonCharacters {
         struct Request {
         }
         struct Response {
+            let characters: [CharResult]
         }
         struct ViewModel {
+            let characterInformation: [(String, String)]
         }
     }
 }

@@ -13,12 +13,14 @@
 import UIKit
 
 protocol MainDisplayLogic: AnyObject {
+    func addCharactersToVariable(viewModel: Main.desplayCartoonCharacters.ViewModel)
 }
 
 class MainViewController: UIViewController, MainDisplayLogic {
     var interactor: MainBusinessLogic?
     var router: (NSObjectProtocol & MainRoutingLogic & MainDataPassing)?
     private var mainTable = UITableView()
+    private var characters = [(String, String)]()
     
     // MARK: Object lifecycle
     
@@ -65,8 +67,6 @@ class MainViewController: UIViewController, MainDisplayLogic {
         mainTable.register(MainTableViewCell.self, forCellReuseIdentifier: "One")
     }
     
-    
-    
     // MARK: Routing
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -87,24 +87,38 @@ class MainViewController: UIViewController, MainDisplayLogic {
         view.addSubview(mainTable)
         mainTableSetup()
         setupConstraints()
+        requestCartoonCharacters()
     }
     
     // MARK: Do something
+    
+    private func requestCartoonCharacters() {
+        let request = Main.desplayCartoonCharacters.Request()
+        interactor?.fetchCartoonCharacters(request: request)
+    }
+    
+    func addCharactersToVariable(viewModel: Main.desplayCartoonCharacters.ViewModel) {
+        let characterInformation = viewModel.characterInformation
+        self.characters = characterInformation
+        mainTable.reloadData()
+    }
         
 }
 
 extension MainViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(characters[indexPath.row])
+    }
 }
 
 extension MainViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return characters.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "One") as? MainTableViewCell
-        cell?.setupLabels(name: "Hello", species: "Space")
+        cell?.setupLabels(name: characters[indexPath.row].0, species: characters[indexPath.row].1)
         return cell ?? UITableViewCell()
     }
     

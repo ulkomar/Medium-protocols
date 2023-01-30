@@ -13,7 +13,7 @@
 import UIKit
 
 protocol MainPresentationLogic {
-    func presentSomething(response: Main.Something.Response)
+    func presentFetchedCartoonCharacters(response: Main.desplayCartoonCharacters.Response)
 }
 
 class MainPresenter: MainPresentationLogic {
@@ -21,8 +21,13 @@ class MainPresenter: MainPresentationLogic {
     
     // MARK: Do something
     
-    func presentSomething(response: Main.Something.Response) {
-        let viewModel = Main.Something.ViewModel()
-        viewController?.displaySomething(viewModel: viewModel)
+    func presentFetchedCartoonCharacters(response: Main.desplayCartoonCharacters.Response) {
+        let characterArray = response.characters
+        var characterInformation: [(String, String)] = []
+        for character in characterArray {
+            characterInformation.append((character.name, character.species))
+        }
+        let viewModel = Main.desplayCartoonCharacters.ViewModel(characterInformation: characterInformation)
+        viewController?.addCharactersToVariable(viewModel: viewModel)
     }
 }

@@ -44,7 +44,8 @@ class MainTableViewCell: UITableViewCell {
         NSLayoutConstraint.activate([
             nameLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0),
             nameLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
-            nameLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10)
+            nameLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
+            nameLabel.bottomAnchor.constraint(equalTo: speciesLabel.topAnchor, constant: 0)
         ])
         
         speciesLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -54,6 +55,8 @@ class MainTableViewCell: UITableViewCell {
             speciesLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 0),
             speciesLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0)
         ])
+        
+        contentView.heightAnchor.constraint(greaterThanOrEqualToConstant: 44).isActive = true
     }
     
     func setupLabels(name: String, species: String) {

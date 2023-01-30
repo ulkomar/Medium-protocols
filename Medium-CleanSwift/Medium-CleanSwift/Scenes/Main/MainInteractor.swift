@@ -13,25 +13,37 @@
 import UIKit
 
 protocol MainBusinessLogic {
-    func doSomething(request: Main.Something.Request)
+    func fetchCartoonCharacters(request: Main.desplayCartoonCharacters.Request)
 }
 
 protocol MainDataStore {
-    //var name: String { get set }
+    var characters: [CharResult] { get set }
 }
 
 class MainInteractor: MainBusinessLogic, MainDataStore {
     var presenter: MainPresentationLogic?
     var worker: MainWorker?
-    //var name: String = ""
+    var characters: [CharResult] = []
+    private let network = Network()
     
     // MARK: Do something
     
-    func doSomething(request: Main.Something.Request) {
-        worker = MainWorker()
-        worker?.doSomeWork()
+    func fetchCartoonCharacters(request: Main.desplayCartoonCharacters.Request) {
         
-        let response = Main.Something.Response()
-        presenter?.presentSomething(response: response)
+        network.fatchCharacters { [weak self] result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let result):
+                    let characters = result.results
+                    self?.characters = characters
+                    let response = Main.desplayCartoonCharacters.Response(characters: characters)
+                    self?.presenter?.presentFetchedCartoonCharacters(response: response)
+                case .failure(let failure):
+                    // Здесь можно как-то обработать ошибку
+                    print(failure)
+                }
+            }
+        }
+        
     }
 }
