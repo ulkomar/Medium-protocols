@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		802886352987E11C00DA8E6D /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802886342987E11C00DA8E6D /* MainTableViewCell.swift */; };
 		80FCB22E2987D193001F3B69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FCB22D2987D193001F3B69 /* AppDelegate.swift */; };
 		80FCB2302987D193001F3B69 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FCB22F2987D193001F3B69 /* SceneDelegate.swift */; };
 		80FCB2372987D195001F3B69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80FCB2362987D195001F3B69 /* Assets.xcassets */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		802886342987E11C00DA8E6D /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		80FCB22A2987D193001F3B69 /* Medium-CleanSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Medium-CleanSwift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80FCB22D2987D193001F3B69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80FCB22F2987D193001F3B69 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +63,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		802886332987E10300DA8E6D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				802886342987E11C00DA8E6D /* MainTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		80FCB2212987D193001F3B69 = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +129,7 @@
 		80FCB2502987D373001F3B69 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				802886332987E10300DA8E6D /* Cells */,
 				80FCB2482987D362001F3B69 /* MainViewController.swift */,
 				80FCB2492987D362001F3B69 /* MainInteractor.swift */,
 				80FCB2442987D362001F3B69 /* MainPresenter.swift */,
@@ -227,6 +238,7 @@
 				80FCB24E2987D362001F3B69 /* MainViewController.swift in Sources */,
 				80FCB25A2987D398001F3B69 /* DetailedRouter.swift in Sources */,
 				80FCB2602987D9DC001F3B69 /* API.swift in Sources */,
+				802886352987E11C00DA8E6D /* MainTableViewCell.swift in Sources */,
 				80FCB25D2987D398001F3B69 /* DetailedInteractor.swift in Sources */,
 				80FCB24C2987D362001F3B69 /* MainRouter.swift in Sources */,
 				80FCB22E2987D193001F3B69 /* AppDelegate.swift in Sources */,

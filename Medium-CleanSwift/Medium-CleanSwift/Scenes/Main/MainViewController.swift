@@ -13,12 +13,12 @@
 import UIKit
 
 protocol MainDisplayLogic: AnyObject {
-    func displaySomething(viewModel: Main.Something.ViewModel)
 }
 
 class MainViewController: UIViewController, MainDisplayLogic {
     var interactor: MainBusinessLogic?
     var router: (NSObjectProtocol & MainRoutingLogic & MainDataPassing)?
+    private var mainTable = UITableView()
     
     // MARK: Object lifecycle
     
@@ -47,6 +47,26 @@ class MainViewController: UIViewController, MainDisplayLogic {
         router.dataStore = interactor
     }
     
+    private func setupConstraints() {
+        let safeArea = view.safeAreaLayoutGuide
+        
+        mainTable.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            mainTable.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 0),
+            mainTable.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 0),
+            mainTable.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: 0),
+            mainTable.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: 0)
+        ])
+    }
+    
+    private func mainTableSetup() {
+        mainTable.delegate = self
+        mainTable.dataSource = self
+        mainTable.register(MainTableViewCell.self, forCellReuseIdentifier: "One")
+    }
+    
+    
+    
     // MARK: Routing
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -62,19 +82,31 @@ class MainViewController: UIViewController, MainDisplayLogic {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        doSomething()
+        view.addSubview(mainTable)
+        view.backgroundColor = .white
+        view.addSubview(mainTable)
+        mainTableSetup()
+        setupConstraints()
     }
     
     // MARK: Do something
+        
+}
+
+extension MainViewController: UITableViewDelegate {
     
-    //@IBOutlet weak var nameTextField: UITextField!
-    
-    func doSomething() {
-        let request = Main.Something.Request()
-        interactor?.doSomething(request: request)
+}
+
+extension MainViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
     }
     
-    func displaySomething(viewModel: Main.Something.ViewModel) {
-        //nameTextField.text = viewModel.name
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "One") as? MainTableViewCell
+        cell?.setupLabels(name: "Hello", species: "Space")
+        return cell ?? UITableViewCell()
     }
+    
+    
 }
