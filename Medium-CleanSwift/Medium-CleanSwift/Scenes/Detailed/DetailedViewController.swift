@@ -13,14 +13,46 @@
 import UIKit
 
 protocol DetailedDisplayLogic: AnyObject {
-    func displaySomething(viewModel: Detailed.Something.ViewModel)
+    func displayCharacterInformation(viewModel: Detailed.Something.ViewModel)
 }
 
 class DetailedViewController: UIViewController, DetailedDisplayLogic {
     var interactor: DetailedBusinessLogic?
     var router: (NSObjectProtocol & DetailedRoutingLogic & DetailedDataPassing)?
     
-    // MARK: Object lifecycle
+    // MARK: View setup
+    
+    private lazy var characterName: UILabel = {
+        let label = UILabel()
+        label.textColor = .black
+        return label
+    }()
+    
+    private lazy var characterSpecies: UILabel = {
+        let label = UILabel()
+        label.textColor = .black
+        return label
+    }()
+    
+    private lazy var characterImage: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage()
+        imageView.backgroundColor = .red
+        return imageView
+    }()
+    
+    private lazy var stack: UIStackView = {
+        let stack = UIStackView()
+        stack.axis = .vertical
+        stack.spacing = 20
+        stack.addArrangedSubview(characterName)
+        stack.addArrangedSubview(characterSpecies)
+        stack.addArrangedSubview(characterImage)
+        
+        return stack
+    }()
+    
+    // Initialization
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -47,34 +79,35 @@ class DetailedViewController: UIViewController, DetailedDisplayLogic {
         router.dataStore = interactor
     }
     
-    // MARK: Routing
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let scene = segue.identifier {
-            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-            if let router = router, router.responds(to: selector) {
-                router.perform(selector, with: segue)
-            }
-        }
-    }
-    
     // MARK: View lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        doSomething()
+        view.backgroundColor = .white
+        view.addSubview(stack)
+        setupConstraints()
+        showDetailedCharacterInformation()
     }
     
-    // MARK: Do something
+    private func setupConstraints() {
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            stack.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
+            stack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
+            stack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50)
+        ])
+    }
     
-    //@IBOutlet weak var nameTextField: UITextField!
+    // MARK: Class functions
     
-    func doSomething() {
+    func showDetailedCharacterInformation() {
         let request = Detailed.Something.Request()
-        interactor?.doSomething(request: request)
+        interactor?.fetchDetailedInformation(request: request)
     }
     
-    func displaySomething(viewModel: Detailed.Something.ViewModel) {
-        //nameTextField.text = viewModel.name
+    func displayCharacterInformation(viewModel: Detailed.Something.ViewModel) {
+        characterName.text = viewModel.name
+        characterSpecies.text = viewModel.species
+        characterImage.image = viewModel.image
     }
 }

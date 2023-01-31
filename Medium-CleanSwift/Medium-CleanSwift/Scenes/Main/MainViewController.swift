@@ -13,16 +13,22 @@
 import UIKit
 
 protocol MainDisplayLogic: AnyObject {
-    func addCharactersToVariable(viewModel: Main.desplayCartoonCharacters.ViewModel)
+    func addCharactersToVariable(viewModel: Main.displayCartoonCharacters.ViewModel)
 }
 
 class MainViewController: UIViewController, MainDisplayLogic {
+    
+    // MARK: VIP variables
+    
     var interactor: MainBusinessLogic?
     var router: (NSObjectProtocol & MainRoutingLogic & MainDataPassing)?
-    private var mainTable = UITableView()
-    private var characters = [(String, String)]()
     
-    // MARK: Object lifecycle
+    // MARK: Class variables
+    
+    private var mainTable = UITableView()
+    private var characters: [Main.displayCartoonCharacters.ViewModel.characterInformationModel] = []
+    
+    // MARK: Initialization
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -67,17 +73,6 @@ class MainViewController: UIViewController, MainDisplayLogic {
         mainTable.register(MainTableViewCell.self, forCellReuseIdentifier: "One")
     }
     
-    // MARK: Routing
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let scene = segue.identifier {
-            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-            if let router = router, router.responds(to: selector) {
-                router.perform(selector, with: segue)
-            }
-        }
-    }
-    
     // MARK: View lifecycle
     
     override func viewDidLoad() {
@@ -90,14 +85,14 @@ class MainViewController: UIViewController, MainDisplayLogic {
         requestCartoonCharacters()
     }
     
-    // MARK: Do something
+    // MARK: Class functions
     
     private func requestCartoonCharacters() {
-        let request = Main.desplayCartoonCharacters.Request()
+        let request = Main.displayCartoonCharacters.Request()
         interactor?.fetchCartoonCharacters(request: request)
     }
     
-    func addCharactersToVariable(viewModel: Main.desplayCartoonCharacters.ViewModel) {
+    func addCharactersToVariable(viewModel: Main.displayCartoonCharacters.ViewModel) {
         let characterInformation = viewModel.characterInformation
         self.characters = characterInformation
         mainTable.reloadData()
@@ -105,11 +100,16 @@ class MainViewController: UIViewController, MainDisplayLogic {
         
 }
 
+// MARK: - UITableViewDelegate
+
 extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(characters[indexPath.row])
+        interactor?.saveSelectedItem(character: characters[indexPath.row])
+        router?.routeToDetailedViewController()
     }
 }
+
+// MARK: - UITableViewDataSource
 
 extension MainViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -118,7 +118,7 @@ extension MainViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "One") as? MainTableViewCell
-        cell?.setupLabels(name: characters[indexPath.row].0, species: characters[indexPath.row].1)
+        cell?.setupLabels(name: characters[indexPath.row].name, species: characters[indexPath.row].species)
         return cell ?? UITableViewCell()
     }
     

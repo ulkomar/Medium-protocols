@@ -14,6 +14,7 @@ import UIKit
 
 @objc protocol MainRoutingLogic {
     //func routeToSomewhere(segue: UIStoryboardSegue?)
+    func routeToDetailedViewController()
 }
 
 protocol MainDataPassing {
@@ -21,6 +22,7 @@ protocol MainDataPassing {
 }
 
 class MainRouter: NSObject, MainRoutingLogic, MainDataPassing {
+    
     weak var viewController: MainViewController?
     var dataStore: MainDataStore?
     
@@ -41,17 +43,27 @@ class MainRouter: NSObject, MainRoutingLogic, MainDataPassing {
     //  }
     //}
     
+    func routeToDetailedViewController() {
+        let destinationVC = DetailedViewController()
+        var destinationDS = destinationVC.router!.dataStore!
+        passDataToSomewhere(source: dataStore!, destination: &destinationDS)
+        navigateToSomewhere(source: viewController!, destination: destinationVC)
+        
+    }
+    
     // MARK: Navigation
     
-    //func navigateToSomewhere(source: MainViewController, destination: SomewhereViewController)
-    //{
-    //  source.show(destination, sender: nil)
-    //}
+    func navigateToSomewhere(
+        source: MainViewController,
+        destination: DetailedViewController) {
+      source.show(destination, sender: nil)
+    }
     
     // MARK: Passing data
     
-    //func passDataToSomewhere(source: MainDataStore, destination: inout SomewhereDataStore)
-    //{
-    //  destination.name = source.name
-    //}
+    func passDataToSomewhere(
+        source: MainDataStore,
+        destination: inout DetailedDataStore) {
+            destination.character = source.chosenCharacter
+    }
 }

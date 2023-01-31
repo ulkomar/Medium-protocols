@@ -13,7 +13,7 @@
 import UIKit
 
 protocol DetailedPresentationLogic {
-    func presentSomething(response: Detailed.Something.Response)
+    func presentDetailedInformation(response: Detailed.Something.Response)
 }
 
 class DetailedPresenter: DetailedPresentationLogic {
@@ -21,8 +21,13 @@ class DetailedPresenter: DetailedPresentationLogic {
     
     // MARK: Do something
     
-    func presentSomething(response: Detailed.Something.Response) {
-        let viewModel = Detailed.Something.ViewModel()
-        viewController?.displaySomething(viewModel: viewModel)
+    func presentDetailedInformation(response: Detailed.Something.Response) {
+        let name = "Character name: " + response.name
+        let species = "Character species: " + response.species
+        let viewModel = Detailed.Something.ViewModel(
+            name: name,
+            species: species,
+            image: response.image)
+        viewController?.displayCharacterInformation(viewModel: viewModel)
     }
 }

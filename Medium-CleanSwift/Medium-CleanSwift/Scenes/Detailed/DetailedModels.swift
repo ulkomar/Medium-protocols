@@ -19,8 +19,14 @@ enum Detailed {
         struct Request {
         }
         struct Response {
+            let name: String
+            let species: String
+            let image: UIImage
         }
         struct ViewModel {
+            let name: String
+            let species: String
+            let image: UIImage
         }
     }
 }

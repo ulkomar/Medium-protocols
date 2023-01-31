@@ -9,6 +9,8 @@ import UIKit
 
 class MainTableViewCell: UITableViewCell {
     
+    // MARK: View setup
+    
     private lazy var nameLabel: UILabel = {
         let label = UILabel()
         label.text = "Unknown"
@@ -22,6 +24,8 @@ class MainTableViewCell: UITableViewCell {
         label.textColor = UIColor.gray
         return label
     }()
+    
+    // MARK: Initialization
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -32,6 +36,8 @@ class MainTableViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: Setup functions
     
     private func setupSubviews() {
         contentView.addSubview(nameLabel)
