@@ -11,7 +11,7 @@ protocol Sedan {
 protocol Coupe {
     var type: String { get set }
     func sayWho()
-}
+} 
 
 class ToyotaCoupe: Coupe {
     var type = "ToyotaCoupe"
